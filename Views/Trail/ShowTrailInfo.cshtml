@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Trail Info";
+}
+<script>
+    $(document).ready(function(){
+        function initMap() {
+            var latitude= @ViewBag.Trail.Latitude;
+            var longitude=@ViewBag.Trail.Longitude;
+            var latlong = {lat: longitude, lng: latitude};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: latlong
+             });
+            var marker = new google.maps.Marker({
+                position:latlong,
+                map: map
+            });
+        }
+        initMap();
+    });
+</script>
+<div class="col-lg-5">
+    <h1>@ViewBag.Trail.Name</h1>
+    <h3>Description</h3>
+        <h5>@ViewBag.Trail.Description</h5>
+    <h3>Elevation</h3>
+        <h5>@ViewBag.Trail.Elevation.ToString()  Feet</h5>
+    <h3>Length</h3>
+        <h5>@ViewBag.Trail.Length.ToString() Miles</h5>
+    <h3>Longitude</h3>
+        <p>@ViewBag.Trail.Longitude</p>
+    <h3>Latitude</h3>
+        <p>@ViewBag.Trail.Latitude</p>
+</div>
+<div class="col-lg-6">
+   <div id="map" style="height:500px;"></div>
+</div>
+<!--<iframe src="//www.google.com/maps/embed/v1/place?q=Harrods,Brompton%20Rd,%20UK
+      &key=AIzaSyB1w7Pb0zDudc5ecsYXDOL0JddQa13rdMo&center=@ViewBag.Trail.Longitude,@ViewBag.Trail.Latitude">
+</iframe>-->

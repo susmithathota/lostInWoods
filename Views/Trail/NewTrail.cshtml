@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "New Trail";
+}
+<div class="container col-lg-6">
+    <h1>Add a new Trail</h1>
+    <form action="AddNewTrail" method="post">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" name="Name" id="Name">
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" name="Description" id="Description">
+        </div>
+        <div class="form-group">
+            <label for="Length">Length</label>
+            <input type="text" class="form-control" name="Length" id="Length">
+        </div>
+        <div class="form-group">
+            <label for="Elevation">Elevation</label>
+            <input type="text" class="form-control" name="Elevation" id="Elevation">
+        </div>
+        <div class="form-group">
+            <label for="Longitude">Longitude</label>
+            <input type="text" class="form-control" name="Longitude" id="Longitude">
+        </div>
+        <div class="form-group">
+            <label for="Latitude">Latitude</label>
+            <input type="text" class="form-control" name="Latitude" id="Latitude">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Add Trail">
+        </div>
+    </form>
+</div>
